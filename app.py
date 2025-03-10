@@ -10,8 +10,8 @@ load_dotenv()
 
 # Fetch the API key from the environment variable
 API_KEY = os.getenv("YOUTUBE_API_KEY")
-# if not API_KEY:
-#     raise ValueError("API key not found. Make sure it's set in the .env file.")
+if not API_KEY:
+    raise ValueError("API key not found. Make sure it's set in the .env file.")
 
 # Initialize YouTube API client
 youtube = build('youtube', 'v3', developerKey=API_KEY)
